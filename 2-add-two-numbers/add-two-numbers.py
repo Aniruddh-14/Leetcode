@@ -10,18 +10,14 @@ class Solution:
         carry = 0
         
         while l1 or l2 or carry:
-            # Get values from nodes, or 0 if we've reached the end of a list
             val1 = l1.val if l1 else 0
             val2 = l2.val if l2 else 0
-            
-            # Calculate sum and new carry
+      
             total = val1 + val2 + carry
             carry = total // 10
             
-            # Update the result list
             current.next = ListNode(total % 10)
             
-            # Move to next nodes
             current = current.next
             l1 = l1.next if l1 else None
             l2 = l2.next if l2 else None
